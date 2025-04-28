@@ -5,20 +5,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>MonthTest-BlockChain-Counter</title>
     <link rel="stylesheet" href="index.css" />
+    <script src="https://cdn.jsdelivr.net/npm/web3@1.10.0/dist/web3.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
   </head>
   <body>
     <div id="container">
       <h1>COUNTER</h1>
       <div id="countArea">
-        <input type="text" placeholder="Contract Address" />
+        <input id="address" type="text" placeholder="Contract Address" />
         <div class="btn-box">
-          <button>CONNECT</button>
-          <button>RESET</button>
-          <button>+</button>
-          <button>-</button>
+          <button onclick="connect()">CONNECT</button>
+          <button onclick="getCount()">RESULT</button>
+          <button onclick="increment()">+</button>
+          <button onclick="decrement()">-</button>
+          <button onclick="reset()">RESET</button>
         </div>
       </div>
-      <div id="countView"></div>
+      <div id="result" class="result"></div>
     </div>
+    <script src="../02_ganache_test/count.js"></script>
   </body>
 </html>

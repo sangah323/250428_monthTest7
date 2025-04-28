@@ -24,9 +24,11 @@ const increment = async () => {
 
     const contractAddress = "0xa1c016d7c6389F14C1b58153e638Bc625E619884";
     const contract = new web3.eth.Contract(abi, contractAddress);
+
     const gas = await contract.methods.increment().estimateGas();
     const gasPrice = await web3.eth.getGasPrice();
     const data = await contract.methods.increment().encodeABI();
+
     const tx = {
       from: "0xFdd1B7E42ad145c45F311724bD6d77D686AD4C0a",
       to: contractAddress,
