@@ -55,7 +55,10 @@ const getCount = async () => {
     const { account, contract, contractAddress, resultDiv } =
       await prepareContract();
     const count = await contract.methods.getCount().call();
-    resultDiv.innerHTML = `COUNT : ${count}`;
+
+    const lastBlock = await web3.eth.getBlockNumber();
+
+    resultDiv.innerHTML = `COUNT : ${count}, 최신 블록 순번 : ${lastBlock}`;
   } catch (error) {
     console.log(`getcount() 에러 발생 : ${error.message}`);
   }
@@ -115,7 +118,7 @@ const decrement = async () => {
   }
 };
 
-// =0
+// = 0
 const reset = async () => {
   try {
     const { account, contract, contractAddress, resultDiv } =
