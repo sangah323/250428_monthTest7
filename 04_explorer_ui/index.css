@@ -1,0 +1,33 @@
+#container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+#counterArea {
+  width: 100%;
+}
+
+.btn-box {
+  display: inline-flex;
+  gap: 10px;
+}
+
+input {
+  width: 600px;
+  height: 50px;
+}
+
+button {
+  width: 100px;
+  height: 55px;
+  border: none;
+  border-radius: 3px;
+  font-size: 16px;
+  font-weight: 600;
+  color: white;
+  background: black;
+  cursor: pointer;
+}
